@@ -2,7 +2,7 @@
 
 ### taro-template 
 
-bravo-cli下基于taro基础模版(TypeScript, Sass, Commitizen)
+bravo-fe-cli下基于taro基础模版(TypeScript, Sass, Commitizen)
 
 > 首次使用commitizen需要执行以下命令
 
