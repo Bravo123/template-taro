@@ -2,7 +2,7 @@
 
 ### taro-template 
 
-bravo-cli下基于taro基础模版(TypeScript, Sass, Commitizen)
+bravo-fe-cli下基于taro基础模版(TypeScript, Sass, Commitizen)
 
 ```
 taro create --name [页面名称]  // 快速创建页面模版
