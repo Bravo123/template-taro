@@ -24,7 +24,18 @@
     "dev:h5": "npm run build:h5 -- --watch",
     "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
-    "dev:quickapp": "npm run build:quickapp -- --watch"
+    "dev:quickapp": "npm run build:quickapp -- --watch",
+    "prettier": "prettier -c --write '**/*'",
+    "lint-staged": "lint-staged"
+  },
+  "pre-commit": [
+    "lint-staged"
+  ],
+  "lint-staged": {
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "author": "",
   "license": "MIT",
@@ -39,35 +50,37 @@
     "@tarojs/taro-swan": "1.3.16",
     "@tarojs/taro-tt": "1.3.16",
     "@tarojs/taro-weapp": "1.3.16",
-    "nervjs": "^1.4.0",
-    "nerv-devtools": "^1.4.0"
+    "nerv-devtools": "^1.4.0",
+    "nervjs": "^1.4.0"
   },
   "devDependencies": {
-    "@types/react": "^16.4.6",
-    "@types/webpack-env": "^1.13.6",
     "@tarojs/plugin-babel": "1.3.16",
     "@tarojs/plugin-csso": "1.3.16",
     "@tarojs/plugin-sass": "1.3.16",
     "@tarojs/plugin-uglifyjs": "1.3.16",
     "@tarojs/webpack-runner": "1.3.16",
+    "@types/react": "^16.4.6",
+    "@types/webpack-env": "^1.13.6",
+    "@typescript-eslint/parser": "^1.6.0",
+    "babel-eslint": "^8.2.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-jsx-stylesheet": "^0.6.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-eslint": "^8.2.3",
     "eslint": "^5.16.0",
     "eslint-config-taro": "1.3.16",
+    "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-react-hooks": "^1.6.1",
-    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-taro": "1.3.16",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
     "stylelint": "9.3.0",
     "stylelint-config-taro-rn": "1.3.16",
     "stylelint-taro-rn": "1.3.16",
-    "eslint-plugin-taro": "1.3.16",
-    "@typescript-eslint/parser": "^1.6.0",
-    "typescript": "^3.0.1",
-    "husky": "^3.1.0"
+    "typescript": "^3.0.1"
   },
   "config": {
     "commitizen": {
@@ -76,6 +89,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "npm run lint-staged",
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   }
