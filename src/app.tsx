@@ -1,5 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro';
 import Index from './pages/index';
+import { set as globalDataSet } from './lib/global';
 
 import './app.scss';
 
@@ -27,7 +28,10 @@ class App extends Component {
     },
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    // TODO 生成请求头的一些信息 deviceId systemInfo
+    globalDataSet('systemInfo', Taro.getSystemInfoSync());
+  }
 
   componentDidShow() {}
 

@@ -7,3 +7,7 @@ export function set(key: string, val: string | object) {
 export function get(key: string): string | object {
   return globalData[key];
 }
+
+export function remove(key: string) {
+  delete globalData[key];
+}
