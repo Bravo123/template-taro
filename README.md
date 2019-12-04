@@ -4,6 +4,10 @@
 
 bravo-cli下基于taro基础模版(TypeScript, Sass, Commitizen)
 
+```
+taro create --name [页面名称]  // 快速创建页面模版
+```
+
 > 首次使用commitizen需要执行以下命令
 
 ```
