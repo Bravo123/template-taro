@@ -20,4 +20,4 @@ commitizen init cz-conventional-changelog --save-dev --save-exact
 
 - 配置了`husky` `prettier` `commitizen` 来保证代码的规范统一
 - `global.ts` 提供一个全局变量来存放数据，较`Redux`更轻巧
-- 封装了统一的 request 请求
+- 封装了统一的 request 请求，以及一些常用的`utils`函数
