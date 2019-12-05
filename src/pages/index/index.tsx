@@ -1,8 +1,11 @@
 import Taro, { Component, Config } from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import './index.scss';
+import { timeFormat } from '@/utils/utils';
 
-const initialState = {};
+const initialState = {
+  time: timeFormat(12312312312),
+};
 
 type State = Readonly<typeof initialState>;
 
@@ -31,9 +34,10 @@ export default class Index extends Component {
   componentDidHide() {}
 
   render() {
+    const { time } = this.state;
     return (
       <View className="index">
-        <Text>Hello world!</Text>
+        <Text>{time}</Text>
       </View>
     );
   }
